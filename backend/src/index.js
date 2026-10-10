@@ -94,8 +94,9 @@ async function startServer(portToTry = PORT) {
     await initDatabase();
     await seedDatabase();
 
-    const server = app.listen(portToTry, () => {
-      console.log(`🚀 CampusPulse AI Backend running at http://localhost:${portToTry}`);
+    const HOST = '0.0.0.0';
+    const server = app.listen(portToTry, HOST, () => {
+      console.log(`🚀 CampusPulse AI Backend running at http://${HOST}:${portToTry}`);
       console.log(`⚡ API ready for Smart Attendance & Daily Flyer generation.`);
     });
 
